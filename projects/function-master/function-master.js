@@ -142,18 +142,38 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+    let undefArr = [];
     let nonFriendArr = [];
-    //loop through the array and compare the names to the friend's names.
+    //Create an instance for an undefined array
+    if(name.friends[0] === undefined){
         for(let i = 0; i < array.length; i++){
-            //if the name in the array (atp) matches a name from the friends list
-            if(name.friends === undefined){
-                return nonFriendArr = array;
-            } else if (array[i] !== name.friends[i]){
-                nonFriendArr.push(array[i])
-            }
+            undefArr.push(array[i]);
+            console.log(undefArr);
+      }
+      return undefArr;
+    } else {
+      if(name.friends.length === 1){
+        for(let i = 0; i < array.length; i++){
+          if(name.friends[0] !== array[i]){
+            nonFriendArr.push(array[i])
+            console.log(nonFriendArr);
+          }
         }
         return nonFriendArr;
-}
+      } else {
+        for(let i = 0; i < array.length;i++){
+          for(let y = 0; y < name.friends.length; i++){
+            if(array[i] === name.friends[y]){
+              console.log(nonFriendArr)
+            } else {
+              nonFriendArr.push(array[i])
+            }
+          }
+        }
+        return nonFriendArr;
+      }
+    }
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
