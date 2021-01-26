@@ -14,14 +14,14 @@
  *///example:
  let a = 10;
  let b = 5;
- //This conditional statement will print the value of whichever letter has the highest value to the two.
- if(a < b){//The condition set here is if the value of a is less than the value of be, execute the code that follows
-    console.log(b);//The code to be executed if the condition before it is true(the value of b will print to the console)
- } else if(a > b){//This is the code that will actually be executed because thecondition is true(a is greater than b)
-    console.log(a);//10 will print to the console because 10 is greater than 5(or a is greater than b)
- } else { //else statements end conditional statements
-    console.log("These are equal!")//If none of the above if/else if statements are true, this code block will execute.
-    //If a and b are equal "These are equal!" will print to the console.
+   //This conditional statement will print the value of whichever letter has the highest value to the two.
+ if(a < b){  //The condition set here is if the value of a is less than the value of be, execute the code that follows
+    console.log(b);  //The code to be executed if the condition before it is true(the value of b will print to the console)
+ } else if(a > b){  //This is the code that will actually be executed because thecondition is true(a is greater than b)
+    console.log(a);  //10 will print to the console because 10 is greater than 5(or a is greater than b)
+ } else {   //else statements end conditional statements
+    console.log("These are equal!")  //If none of the above if/else if statements are true, this code block will execute.
+      //If a and b are equal "These are equal!" will print to the console.
  }
 /**
  *  2. Don'ts

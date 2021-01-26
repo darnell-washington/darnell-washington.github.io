@@ -142,45 +142,25 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-    let undefArr = [];
-    let nonFriendArr = [];
-    //Create an instance for an undefined array
-    if(name.friends[0] === undefined){
-        for(let i = 0; i < array.length; i++){
-            undefArr.push(array[i]);
-            console.log(undefArr);
-      }
-      return undefArr;
-    } else {
-      if(name.friends.length === 1){
-        for(let i = 0; i < array.length; i++){
-          if(name.friends[0] !== array[i]){
-            nonFriendArr.push(array[i])
-            console.log(nonFriendArr);
-          }
+    let newArr = [];
+  for(let person of array) {
+        // Checking if the name is not the name from the object and the name is not inside the friends array.
+        if(person.name !== name && !person.friends.includes(name) ) {
+            // Adding that person to the friends array
+            newArr.push(person.name);
         }
-        return nonFriendArr;
-      } else {
-        for(let i = 0; i < array.length;i++){
-          for(let y = 0; y < name.friends.length; i++){
-            if(array[i] === name.friends[y]){
-              console.log(nonFriendArr)
-            } else {
-              nonFriendArr.push(array[i])
-            }
-          }
-        }
-        return nonFriendArr;
-      }
     }
-  }
+    return newArr;
+}
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+    let newObject = {...object}
+    newObject[key] = value;
+    return newObject
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -188,7 +168,11 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    for(let prop of array){
+        if(object.hasOwnProperty(prop)){
+            delete object[prop]
+        }
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -196,7 +180,8 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+ let removeDupes = [...new Set(array)];
+return removeDupes;
 }
 
 //////////////////////////////////////////////////////////////////////
