@@ -28,17 +28,18 @@ for(var i = 0; i < arr.length; i++){
  * For in loops are used to iterate over key value pairs in objects.
  * For each distinct property, JavaScript executes the specified statements.
  * 
- * Syntax: For in loops start with the key word for as well, but contain the in keyword in the conditional statement.
+ * Syntax: For in loops start with the the decleration followed by the key keyword, but unlike for of, for in loops returns a list of keys.
  */
  var myObj = {
      name: "Darnell",
      age: 27,
  }
-for (var key in myObj){//For every key property in the object log the value to the console.
+for (var key in myObj){//For every value in the object iterate over a list and return a list of values.
     console.log(myObj[key]);
 }
 //For of loops are written the same as for in loops.
-for(var keyy of myObj){
+var myArr = ["Darnell", 27];
+for(var key of myArr){
     console.log(key)//Logs the names of the keys for each key in the object.
 }
 /**      3. While Loops:
@@ -56,41 +57,6 @@ while(count < 5){
     console.log(count);
     count ++;
 }
-/**
- *      4. The switch statement evaluates an expression, matching the expression's value to a case clause, 
- * and executes statements associated with that case, as well as statements in cases that follow the matching case.
- * 
- * The switch statement evaluates an expression, matching the expression's value to a case clause, and executes statements 
- * associated with that case, as well as statements in cases that follow the matching case.
- * 
- * Basically the conditional is written in each case statement.
- * In every case statment we'll be chaging the result of the expression.
- * Before creating another condtional case we have to use the break key word to move on.
- * The "default" expression is the last step in switch statements.
- * 
- */
- var Animal = 'Giraffe';
-switch (Animal) {
-  case 'Cow':
-  case 'Giraffe':
-  case 'Dog':
-  case 'Pig':
-    console.log('This animal will go on Noah\'s Ark.');
-    break;
-  case 'Dinosaur':
-  default:
-    console.log('This animal will not.');
-  switch (expression) {
-  case value1:
-    //Statements executed when the
-    //result of expression matches value1
-    [break;]
-  case value2:
-    //Statements executed when the
-    //result of expression matches value2
-    [break;]
-    [default:
-    //Statements executed when none of
-    //the values match the value of the expression
-    [break;]]
-};
+
+ 
+ 

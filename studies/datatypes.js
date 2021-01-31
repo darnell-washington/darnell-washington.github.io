@@ -73,3 +73,16 @@ console.log(myObject.key3[1])// This prints the number 6 to the console
 //This will access the value in key3 witch is an array
 //Then we can use it like an array and access its second index
 console.log(myObject.key4.name)//This will print "Darnell" to the console since name is the key in key4's object.
+
+/** Copy by reference vs Copy by value.
+ * Copy by reference
+ */
+ 
+/** Copy by value:
+ * When copying by value a copy of the data is created, and accesed by the copying variable.
+ */ 
+ //CBV example
+ let x = myObject; // a is now set to the myObject Object. This is actually a copy by value.
+ //CBR example
+ let y = x;//This will create a copy of the myObject obj just for y to hold, so the original wont be affected, and 
+ //so y can be referenced and changed individually.

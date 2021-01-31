@@ -10,6 +10,12 @@
 * The return keyword will stop the function from executing.
 * 
 * To call or "invoke" a function use its name followed by the data you want to act on in parenthesis.
+* The data in the parenthesis during a function call are called arguments.
+* 
+*   1.5 Parameters VS Arguments
+* Parameters are place holders for certain types of data. Here we determine what a function can use and how.
+* Arguments are used when invoking or calling a function. This IS the actual data we are running the function on, 
+* where-as parameters are place holders.
 * ex:
 * The first function below is anonomys because it is not assigned a variable.
 */
@@ -17,7 +23,7 @@ function myFunc() {//This function has a name and no parameters.
   console.log("Hello")//It has no return key word, but if called the code will execute.
 }
 
-myFunc();//Logs "Hello" to the console. 
+myFunc();//Logs "Hello" to the console. No areguments are needed for this function to run.
 
 // assigning a functions to a variable
 
@@ -44,6 +50,6 @@ let func = function(){
   var string2 = "This is local and cant be used outside of this functions"
   console.log(string1)
 }
-console.log(string2);//This variable does not exist in the window object.
+//console.log(string2);//This code creates a runtime error. This variable does not exist in the window object.
 
 func()//This will print the string in string1.  

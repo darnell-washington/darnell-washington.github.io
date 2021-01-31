@@ -74,14 +74,14 @@ var firstLetterCount = function(array, letter){
         if(customerObj.name[0].toLowerCase() === letter.toLowerCase()){
             //console.log(acc);
             return acc += 1
-        } 
+        }
         return acc
     }, 0)
     return same;
 };
 
 var friendFirstLetterCount = function(array, customer, letter){
-    //create avariable to hole the reduce function
+    //create avariable to hold the reduce function
     let same = _.reduce(array, function(acc, customerObj){
         //check if the customer is the current customer obj.
         if(customerObj.name === customer){
@@ -99,14 +99,45 @@ var friendFirstLetterCount = function(array, customer, letter){
 
 var friendsCount = function(array, name){
     //if the friends list contains name, return that customers name
-    // _.reduce(array, function(acc, ){
-        
-    // })
+        let result = _.filter(array, function(customerObj){
+            //let friendsArr = customerObj.friends
+            for(let i = 0; i < customerObj.friends.length; i++){
+                if (customerObj.friends[i].name === name){
+                    return customerObj;
+                }
+            }
+        })
+        console.log(result);
+         return _.pluck(result, "name");
+    };
+
+var topThreeTags = function(array){
+    //find the 3 most common tags in each customer obj.tags array
+    var result = [];
+    let tagsArr = _.reduce(array, function(acc, curr){
+        let tags = curr.tags
+                acc = acc.concat(tags)
+                //console.log(acc)
+                return acc;
+    }, [])
+    console.log(tagsArr);
+    return result;
 };
 
-var topThreeTags;
-
-var genderCount;
+function genderCount(customerArray, obj = {}){
+    if(!customerArray.length){
+      //base case
+      return obj;
+    } else {
+      let gender = customerArray[0].gender;
+      if(obj[gender]){
+        obj[gender]++
+      } else {
+        obj[gender] = 1;
+      }
+      return genderCount(customerArray.slice(1), obj)
+    }
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

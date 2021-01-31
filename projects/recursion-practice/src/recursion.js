@@ -53,17 +53,35 @@ var isEven = function(n) {
 var sumBelow = function(n) {
   //base case
   if(n === 0){
-    return 1 + n;
+    return n;
   } else if(n < 0){
-    return 
+    //if n is negative tke the value of one number above n and add it to the recusion case.
+    return (n + 1) + sumBelow(n + 1)
+  } else {
+    //if n is positive add one number below n to the recursion case. 
+    return (n - 1) + sumBelow(n - 1)
+    
   }
   //recusive case
-  return sumBelow(n - 1) + n;
+  //return sumBelow(n - 1) + n;
 };
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y) {
+var range = function(x, y, arr = []) {
+  //base case
+  if(x === y - 1 || x - 1 === y){
+    //basecase
+    return arr;
+  } else if(x < y){
+    console.log(arr)
+    return range(x + 1, y, arr.concat([x + 1]));
+  } else if(x > y){
+    return range(x - 1, y, arr.concat([x - 1]));
+  } else if(x === y){
+    return [];
+  }
+  //recursive case
 };
 
 // 7. Compute the exponent of a number.
@@ -71,7 +89,17 @@ var range = function(x, y) {
 // 8^2 = 8 x 8 = 64.  Here, 8 is the base and 2 is the exponent.
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
-var exponent = function(base, exp) {
+var exponent = function(base, exp) {//3^4 3*3*3*3
+  //basecase                                9*3*3
+  if(exp === 0){//                           27*3
+    return 1//                                 81
+    //recur case: if exp is even and positive
+  } else if(exp > 0){
+    return base * exponent(base, exp - 1);
+  }else if(exp < 0){
+    base * base;
+    return parseFloat((1 / base * exponent(base, exp + 1)).toFixed(5))
+  }
 };
 
 // 8. Determine if a number is a power of two.
@@ -79,6 +107,10 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  //base case
+  
+  //recur case
+  
 };
 
 // 9. Write a function that accepts a string a reverses it.

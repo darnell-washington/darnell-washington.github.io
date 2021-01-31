@@ -47,3 +47,40 @@
    else if statements follow ifs and can end conditionals if they are not followed by anything.
  * else statements only end conditional statements.
  */
+ /**
+  * 4. Switch Statements
+ *      4. The switch statement evaluates an expression, matching the expression's value to a case clause, 
+ * and executes statements associated with that case, as well as statements in cases that follow the matching case.
+ * 
+ * Basically the conditional is written in each case statement.
+ * In every case statment we'll be chaging the result of the expression.
+ * Before creating another condtional case we have to use the break key word to move on.
+ * The "default" expression is the last step in switch statements.
+ * 
+ */
+  var Animal = 'Giraffe';
+switch (Animal) {
+  case 'Cow':
+  case 'Giraffe':
+  case 'Dog':
+  case 'Pig':
+    console.log('This animal will go on Noah\'s Ark.');
+    break;
+  case 'Dinosaur':
+  default:
+    console.log('This animal will not.');
+  
+ // switch (expression) {
+  // case value1:
+  //   //Statements executed when the
+  //   //result of expression matches value1
+  //   [break;]
+  // case value2:
+  //   //Statements executed when the
+  //   //result of expression matches value2
+  //   [break;]
+  //   [default:
+  //   //Statements executed when none of
+  //   //the values match the value of the expression
+  //   [break;]]
+}
