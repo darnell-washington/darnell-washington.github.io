@@ -107,21 +107,38 @@ var friendsCount = function(array, name){
                 }
             }
         })
-        console.log(result);
+        //console.log(result);
          return _.pluck(result, "name");
     };
 
-var topThreeTags = function(array){
-    //find the 3 most common tags in each customer obj.tags array
+var topThreeTags = function(arr){
     var result = [];
-    let tagsArr = _.reduce(array, function(acc, curr){
-        let tags = curr.tags
-                acc = acc.concat(tags)
-                //console.log(acc)
-                return acc;
-    }, [])
-    console.log(tagsArr);
-    return result;
+//assign the variable of tagsArray to a reduced version of the input array.
+var tagsArray = _.reduce(arr, function(acc, curr){
+    //get the tags from the current customer object and let it equal tags
+let tags = curr.tags;
+//concat all tags from each person into empty seed array
+acc = acc.concat(tags); 
+     return acc;
+},[]);
+// console.log(tagsArray);
+//code that counts the tags and puts them in a counter object with the objects as keys and numbers as values
+var tagsCountObj =_.reduce(tagsArray, function(acc, curr){
+    if(acc[curr]){
+        acc[curr] += 1;
+    } else {
+        acc[curr] = 1;
+    } return acc;
+}, {});
+//code that gets the counters with the max value
+    var getMax = object => {
+        return Object.keys(object).filter(x => {
+             return object[x] == Math.max.apply(null, 
+             Object.values(object));
+       });
+    };
+result = getMax(tagsCountObj);
+return result;
 };
 
 function genderCount(customerArray, obj = {}){
