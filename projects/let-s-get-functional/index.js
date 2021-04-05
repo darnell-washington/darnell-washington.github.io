@@ -106,7 +106,7 @@ var friendsCount = function(array, name){
                     return customerObj;
                 }
             }
-        })
+        });
         //console.log(result);
          return _.pluck(result, "name");
     };
